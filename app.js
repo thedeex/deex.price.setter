@@ -306,9 +306,10 @@ if (web3.isConnected()) {
 
                                                         '\n\n price change in wei :' + priceChangeInWei +
                                                         ' (' + web3.fromWei(priceChangeInWei, 'ether') + ' ETH or ' + weiToUsdAtCurrentRate(priceChangeInWei) + ' USD)' +
-                                                        '\n price change in percents: ' + priceChangeInPercents + '% (significant change when >' + significantChangeInPercents + '%)';
+                                                        '\n price change in percents: ' + priceChangeInPercents + '% (significant change when >=' + significantChangeInPercents + '%)';
 
-                                                    if (priceChangeInPercents >= significantChangeInPercents) {
+                                                    if (priceChangeInPercents >= significantChangeInPercents || bonusChanged) {
+
                                                         logMessage = logMessage + "\n this change is significant, price will be changed in smart contract "
                                                             + etherscan + 'address/' + contract.address + '\n';
 
