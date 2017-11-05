@@ -129,7 +129,7 @@ if (web3.isConnected()) {
 
             if (web3.version.network === '1') {  //             MainNet
                 intervalInMilliseconds = oneHourInMilliseconds; // 1 hour
-                significantChangeInPercents = 10; // %
+                significantChangeInPercents = 5; // %
 
             } else if (web3.version.network === '3') { //       Ropsten
                 intervalInMilliseconds = oneMinuteInMilliseconds * 10; // 10 min
